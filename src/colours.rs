@@ -1,7 +1,8 @@
 use blend::{self, RgbColour};
+use std::process;
 
 pub fn get_rgbcolour(colour: &str) -> RgbColour {
-    // Checks if colour is a hex code 
+    // Checks if colour is a hex code
     // and if so tries to get the RGB value
     match colour.chars().next() {
         Some('#') => {
@@ -9,11 +10,11 @@ pub fn get_rgbcolour(colour: &str) -> RgbColour {
                 return clr;
             } else {
                 eprintln!("Error! Invalid RGB hex code entered\nHelp: Prefix a colour hex code with a `#` (like `#7afab4` or `#3A05EB`)");
-                std::process::exit(1);
+                process::exit(1);
             }
         }
 
-        // Predefined Common Colours 
+        // Predefined Common Colours
         _ => match colour.to_lowercase().as_ref() {
             "red" => RgbColour::new(255, 0, 0),
             "green" => RgbColour::new(0, 255, 0),
@@ -32,7 +33,7 @@ pub fn get_rgbcolour(colour: &str) -> RgbColour {
 
             _ => {
                 eprintln!("Error! Unsupported Colour: `{}`\nHelp: Use the `--help` option to see all supported colours\nHelp: Prefix a colour hex code with a `#` (like `#7afab4` or `#3A05EB`)", colour.to_lowercase());
-                std::process::exit(1);
+                process::exit(1);
             }
         },
     }

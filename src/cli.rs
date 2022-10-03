@@ -8,7 +8,7 @@ pub struct Cli {
     /// Accepts hexadecimal colour codes (Both uppercase and lowercase)
     /// as well as some commonly used colours as arguments
     ///
-    /// Supported Colours are: red, blue, green, white, black, gray, 
+    /// Supported Colours are: red, blue, green, white, black, gray,
     /// yellow, cyan, magenta, violet, orange, brown and dark green
     #[arg(short, long)]
     pub colour: Vec<String>,

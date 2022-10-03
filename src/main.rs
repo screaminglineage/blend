@@ -9,7 +9,6 @@ mod colours;
 use colours::get_rgbcolour;
 
 fn main() -> io::Result<()> {
-    //demo();
     let cli = Cli::parse();
 
     // Show Help if no Arguments Given
@@ -47,21 +46,4 @@ fn main() -> io::Result<()> {
     }
 
     Ok(())
-}
-
-fn _demo() {
-    use blend::hex_to_rgb as ha;
-
-    let colours = vec![
-        ha("#3a05eb").unwrap(),
-        ha("#044a52").unwrap(),
-        ha("#057d15").unwrap(),
-        ha("#b40bde").unwrap(),
-    ];
-    let mixed = blend::mix_colours(&colours);
-
-    for clr in colours {
-        print!("{} + ", clr);
-    }
-    println!("= {}", mixed);
 }
